@@ -3,7 +3,7 @@
 set -e
 
 usage() {
-	echo "usage: $(basename "$0") [-f] new@email"
+	echo "usage: $(basename "$0") [-f] 7.1.1"
 	exit 1
 }
 
