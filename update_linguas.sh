@@ -14,14 +14,14 @@ done
 
 for i in *-l10n; do
 	cd "$i/po"
-	find . -name '*.po' | sed -e 's,./,,' -e 's,\.po$,,' > LINGUAS
+	find . -name '*.po' | sed -e 's,./,,' -e 's,\.po$,,' | sort -u > LINGUAS
 	cd -
 
 	if [ "$dryrun" != 1 ]; then
 		cd "$i"
 		git add po/LINGUAS
 		git commit -m "Add missing LINGUAS files."
-		git checkout maemo/beouwulf
+		git checkout maemo/beowulf
 		git merge master
 		git checkout master
 		cd -
